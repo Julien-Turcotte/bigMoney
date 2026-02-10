@@ -1,4 +1,4 @@
-# MiniUniswap DEX Startup Script for Windows
+﻿# MiniUniswap DEX Startup Script for Windows
 # This script starts the entire application stack
 
 param(

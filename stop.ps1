@@ -1,4 +1,4 @@
-# MiniUniswap DEX Stop Script for Windows
+﻿# MiniUniswap DEX Stop Script for Windows
 # This script stops all running services
 
 Write-Host "🛑 Stopping MiniUniswap DEX services..." -ForegroundColor Yellow
