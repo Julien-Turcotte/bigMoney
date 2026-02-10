@@ -71,6 +71,7 @@ Then open `http://localhost:3000` or `http://localhost:5173` and connect MetaMas
 ## Documentation
 
 - 📖 [Quick Start Guide](./docs/QUICKSTART.md) - Get up and running in 5 minutes
+- 🪟 [Windows Guide](./docs/WINDOWS.md) - Complete Windows setup with PowerShell scripts
 - 🏗️ [Architecture](./docs/ARCHITECTURE.md) - System design and contracts
 - 📚 [API Reference](./docs/API.md) - Smart contract functions
 - 🎨 [Frontend Guide](./docs/FRONTEND.md) - React app development
