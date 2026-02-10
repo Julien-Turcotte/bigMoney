@@ -21,10 +21,13 @@ function Test-Port {
 function Stop-ProcessOnPort {
     param([int]$Port)
     try {
-        $processId = (Get-NetTCPConnection -LocalPort $Port -ErrorAction SilentlyContinue).OwningProcess
-        if ($processId) {
-            Stop-Process -Id $processId -Force -ErrorAction SilentlyContinue
-            Write-Host "✓ Stopped process on port $Port" -ForegroundColor Yellow
+        $connections = @(Get-NetTCPConnection -LocalPort $Port -ErrorAction SilentlyContinue)
+        if ($connections) {
+            $processIds = $connections | Select-Object -ExpandProperty OwningProcess -Unique
+            foreach ($processId in $processIds) {
+                Stop-Process -Id $processId -Force -ErrorAction SilentlyContinue
+                Write-Host "✓ Stopped process $processId on port $Port" -ForegroundColor Yellow
+            }
             Start-Sleep -Seconds 2
         }
     } catch {

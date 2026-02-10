@@ -11,11 +11,14 @@ function Stop-ProcessOnPort {
         [string]$ServiceName
     )
     try {
-        $processId = (Get-NetTCPConnection -LocalPort $Port -ErrorAction SilentlyContinue).OwningProcess
-        if ($processId) {
-            $processName = (Get-Process -Id $processId -ErrorAction SilentlyContinue).ProcessName
-            Stop-Process -Id $processId -Force -ErrorAction SilentlyContinue
-            Write-Host "✓ Stopped $ServiceName (PID: $processId, Process: $processName)" -ForegroundColor Green
+        $connections = @(Get-NetTCPConnection -LocalPort $Port -ErrorAction SilentlyContinue)
+        if ($connections) {
+            $processIds = $connections | Select-Object -ExpandProperty OwningProcess -Unique
+            foreach ($processId in $processIds) {
+                $processName = (Get-Process -Id $processId -ErrorAction SilentlyContinue).ProcessName
+                Stop-Process -Id $processId -Force -ErrorAction SilentlyContinue
+                Write-Host "✓ Stopped $ServiceName (PID: $processId, Process: $processName)" -ForegroundColor Green
+            }
             return $true
         } else {
             Write-Host "  $ServiceName not running on port $Port" -ForegroundColor Gray
