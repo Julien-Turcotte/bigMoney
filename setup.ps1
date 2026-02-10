@@ -1,4 +1,4 @@
-# MiniUniswap DEX Setup Script for Windows
+﻿# MiniUniswap DEX Setup Script for Windows
 # This script installs all dependencies for the project
 
 Write-Host "🦄 MiniUniswap DEX Setup Script" -ForegroundColor Cyan
