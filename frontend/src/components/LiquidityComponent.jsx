@@ -74,7 +74,7 @@ const LiquidityComponent = ({ account }) => {
     if (tab === 'add' && amount0) {
       calculateToken1Amount();
     }
-  }, [amount0, reserves]);
+  }, [amount0, reserves, tab]);
 
   const handleAddLiquidity = async () => {
     setError('');

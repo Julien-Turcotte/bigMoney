@@ -66,7 +66,7 @@ const SwapComponent = ({ account }) => {
       }
     }, 500);
     return () => clearTimeout(timer);
-  }, [fromAmount, fromToken, toToken]);
+  }, [fromAmount, fromToken, toToken, account]);
 
   const handleSwap = async () => {
     setError('');
