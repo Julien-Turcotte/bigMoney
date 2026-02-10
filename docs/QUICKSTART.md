@@ -11,6 +11,30 @@ Before starting, ensure you have:
 
 ## Step 1: Clone and Setup
 
+### Quick Start (Windows PowerShell - Recommended)
+
+```powershell
+# Clone the repository
+git clone https://github.com/Julien-Turcotte/bigMoney.git
+cd bigMoney
+
+# One command to start everything!
+.\start.ps1
+```
+
+The `start.ps1` script automatically:
+- ✅ Installs all dependencies
+- ✅ Starts local blockchain
+- ✅ Deploys contracts
+- ✅ Distributes test tokens
+- ✅ Starts frontend
+- ✅ Opens browser
+
+**To stop:** Press `Ctrl+C` or run `.\stop.ps1`
+
+### Manual Setup
+
+**Linux/Mac:**
 ```bash
 # Clone the repository
 git clone https://github.com/Julien-Turcotte/bigMoney.git
@@ -18,6 +42,16 @@ cd bigMoney
 
 # Run the setup script (installs all dependencies)
 ./setup.sh
+```
+
+**Windows PowerShell:**
+```powershell
+# Clone the repository
+git clone https://github.com/Julien-Turcotte/bigMoney.git
+cd bigMoney
+
+# Run the setup script (installs all dependencies)
+.\setup.ps1
 ```
 
 Or manually:
@@ -28,6 +62,12 @@ npm install
 # Install frontend dependencies
 cd frontend && npm install && cd ..
 ```
+
+---
+
+**If you used `.\start.ps1`, skip to Step 7 (Use the DEX) below!**
+
+---
 
 ## Step 2: Start Local Blockchain
 

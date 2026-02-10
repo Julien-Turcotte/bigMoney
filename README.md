@@ -13,6 +13,31 @@ A decentralized exchange (DEX) built with React and Solidity that allows users t
 
 ## Quick Start
 
+### Option 1: Automated Startup (Recommended for Windows)
+
+**Windows (PowerShell):**
+```powershell
+# Clone and setup
+git clone https://github.com/Julien-Turcotte/bigMoney.git
+cd bigMoney
+
+# One command to start everything!
+.\start.ps1
+```
+
+The `start.ps1` script will:
+- ✅ Install dependencies (if needed)
+- ✅ Start local blockchain
+- ✅ Deploy smart contracts
+- ✅ Distribute test tokens
+- ✅ Start frontend
+- ✅ Open browser automatically
+
+To stop all services: `.\stop.ps1` or press `Ctrl+C`
+
+### Option 2: Manual Setup
+
+**Linux/Mac:**
 ```bash
 # Clone and setup
 git clone https://github.com/Julien-Turcotte/bigMoney.git
@@ -33,11 +58,20 @@ cd frontend
 npm run dev
 ```
 
-Then open `http://localhost:3000` and connect MetaMask!
+**Windows (PowerShell):**
+```powershell
+# Setup only
+.\setup.ps1
+
+# Then follow the manual steps above
+```
+
+Then open `http://localhost:3000` or `http://localhost:5173` and connect MetaMask!
 
 ## Documentation
 
 - 📖 [Quick Start Guide](./docs/QUICKSTART.md) - Get up and running in 5 minutes
+- 🪟 [Windows Guide](./docs/WINDOWS.md) - Complete Windows setup with PowerShell scripts
 - 🏗️ [Architecture](./docs/ARCHITECTURE.md) - System design and contracts
 - 📚 [API Reference](./docs/API.md) - Smart contract functions
 - 🎨 [Frontend Guide](./docs/FRONTEND.md) - React app development
